@@ -1,0 +1,13 @@
+{% extends 'library/base.html' %}
+{% block title %}Форма автора{% endblock %}
+{% include 'library/header.html' %}
+
+{% block content %}
+<h2>Форма автора</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Сохранить</button>
+    <a href="{% url 'library:authors_list' %}" class="btn btn-secondary">Отмена</a>
+</form>
+{% endblock %}

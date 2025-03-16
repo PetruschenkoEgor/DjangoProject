@@ -1,0 +1,30 @@
+{% extends 'library/base.html' %}
+
+{% block title %}Информация о книге{% endblock %}
+
+{% block content %}
+{% include 'library/header.html' %}
+<h1 class="mb-4">Информация о книге</h1>
+<p>Название книги: {{ book.title|upper }}</p>
+<p>Дата публикации: {{ book.publication_date|date:"d M Y" }}</p>
+<p>Автор: {{ book.author|default:"Автор не указан" }}</p>
+<p>У данного автора {{ author_books_count }} книг</p>
+<p>Средний рейтинг: {{ average_rating }}</p>
+<p>Популярная: {{ is_popular|yesno:"Да,Нет" }}</p>
+<a href="{% url 'library:book_update' book.pk %}"><button class="btn btn-primary">Редактировать</button></a>
+<a href="{% url 'library:book_delete' book.pk %}"><button class="btn btn-secondary">Удалить</button></a>
+{% if "library.can_review_book" in perms %}
+    <form action="{% url 'library:book_review' book.pk %}" method="post">
+        {% csrf_token %}
+        <textarea name="review" placeholder="Напишите рецензию"></textarea>
+        <button type="submit">Рецензировать</button>
+    </form>
+{% endif %}
+
+{% if "library.can_recommend_book" in perms %}
+    <form action="{% url 'library:book_recommend' book.pk %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Рекомендовать</button>
+    </form>
+{% endif %}
+{% endblock %}

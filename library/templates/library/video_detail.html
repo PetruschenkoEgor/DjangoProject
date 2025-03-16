@@ -1,0 +1,17 @@
+{% extends 'library/base.html' %}
+{% block title %}Информация о видео{% endblock %}
+{% include 'library/header.html' %}
+
+{% block content %}
+<h1 class="mb-4">Информация о видео</h1>
+<p>Название видео: {{ video.name }}</p>
+<p>{{ video.video }}</p>
+<br><br>
+<video width='400' controls>
+<source src='{{ MEDIA_URL }}{{ video.video }}' type='video/mp4'>
+Your browser does not support the video tag.
+</video>
+<br><br>
+<a href=""><button class="btn btn-primary">Редактировать</button></a>
+<a href=""><button class="btn btn-secondary">Удалить</button></a>
+{% endblock %}

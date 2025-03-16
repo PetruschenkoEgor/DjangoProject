@@ -1,0 +1,20 @@
+[
+{
+    "model": "library.author",
+    "pk": 1,
+    "fields": {
+        "first_name": "Михаил",
+        "last_name": "Булгаков",
+        "birth_date": "1891-05-15"
+    }
+},
+{
+    "model": "library.author",
+    "pk": 2,
+    "fields": {
+        "first_name": "Александр",
+        "last_name": "Пушкин",
+        "birth_date": "1799-04-10"
+    }
+}
+]

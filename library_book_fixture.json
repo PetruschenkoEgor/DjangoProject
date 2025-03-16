@@ -1,0 +1,38 @@
+[
+{
+    "model": "library.book",
+    "pk": 1,
+    "fields": {
+        "title": "Мастер и Маргарита",
+        "publication_date": "1966-01-01",
+        "author": 1
+    }
+},
+{
+    "model": "library.book",
+    "pk": 2,
+    "fields": {
+        "title": "Дон Кихот",
+        "publication_date": "1938-01-01",
+        "author": 1
+    }
+},
+{
+    "model": "library.book",
+    "pk": 3,
+    "fields": {
+        "title": "Собачье сердце",
+        "publication_date": "1925-01-01",
+        "author": 1
+    }
+},
+{
+    "model": "library.book",
+    "pk": 5,
+    "fields": {
+        "title": "Медный всадник",
+        "publication_date": "1834-01-01",
+        "author": 2
+    }
+}
+]

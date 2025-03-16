@@ -1,0 +1,16 @@
+{% extends 'library/base.html' %}
+
+{% block title %}Список книг{% endblock %}
+
+{% block content %}
+{% include 'library/header.html' %}
+<h1 class="mb-4">Список книг</h1>
+<ul class="list-group">
+    {% for book in books %}
+    <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-success">
+        <a href="{% url 'library:book_detail' book.pk %}">{{ book.title|upper }} - {{ book.publication_date|date:"d M Y" }} - {{ book.author|default:"Автор не указан" }}</a>
+    </li>
+    {% endfor %}
+</ul>
+<a href="{% url 'library:book_create' %}"><button class="btn btn-primary mt-5">Добавить книгу</button></a>
+{% endblock %}
