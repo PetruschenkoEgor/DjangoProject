@@ -6,21 +6,37 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('library', '0001_initial'),
+        ("library", "0001_initial"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Video',
+            name="Video",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=250, verbose_name='Название видео')),
-                ('video', models.FileField(blank=True, null=True, upload_to='video/', verbose_name='')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "name",
+                    models.CharField(max_length=250, verbose_name="Название видео"),
+                ),
+                (
+                    "video",
+                    models.FileField(
+                        blank=True, null=True, upload_to="video/", verbose_name=""
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Видео',
-                'verbose_name_plural': 'Видео',
-                'ordering': ['name'],
+                "verbose_name": "Видео",
+                "verbose_name_plural": "Видео",
+                "ordering": ["name"],
             },
         ),
     ]

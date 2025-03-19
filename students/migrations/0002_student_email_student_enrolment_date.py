@@ -6,19 +6,19 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('students', '0001_initial'),
+        ("students", "0001_initial"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='student',
-            name='email',
+            model_name="student",
+            name="email",
             field=models.EmailField(default=2018, max_length=254),
             preserve_default=False,
         ),
         migrations.AddField(
-            model_name='student',
-            name='enrolment_date',
+            model_name="student",
+            name="enrolment_date",
             field=models.DateField(default=2018),
             preserve_default=False,
         ),
